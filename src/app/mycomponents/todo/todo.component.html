@@ -1,0 +1,13 @@
+<!-- <ul *ngFor="let todo of todos">
+    <li>{{todo.sno}} - {{todo.title}} - {{todo.desc}}</li>
+</ul> -->
+<app-add-todo (todoAdd)="addToDo($event)"></app-add-todo>
+<div *ngIf="this.todos.length===0; else elseBlock">
+    <h3 class="mb-3">No Tasks Present</h3>
+</div>
+<ng-template #elseBlock>
+    <h3 class="mb-3">Your Tasks</h3>
+    <div *ngFor="let todo of todos; index as i">
+        <app-todo-item [todo]="todo" [i]="i"(todoDelete)="deleteTodo($event)" (todoDone)="taskCompleted($event)"></app-todo-item>
+    </div>
+</ng-template>

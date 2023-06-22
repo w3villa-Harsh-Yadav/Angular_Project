@@ -1,0 +1,19 @@
+<h3>Add a Task</h3>
+<form class="mb-4" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      aria-describedby="TitleHelp"
+      [(ngModel)]="title"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Description</label>
+    <textarea class="form-control" id="desc" name="desc" rows="3" [(ngModel)]="desc"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
